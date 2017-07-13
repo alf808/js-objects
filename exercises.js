@@ -36,8 +36,14 @@ console.log(books);
  
  "My dog `name` is `age` year old and likes to `speak`."
 */ 
-
-
+var dog = {
+  name: "puppy",
+  age: 37,
+  vegetarian: true,
+  color: ["brown", "blue"],
+  speak: function () { return "woof!"; }
+};
+console.log("My dog " + dog.name + " is " + dog.age + " year old who likes to " + dog.speak());
 
 //An empty object
 
@@ -52,7 +58,12 @@ console.log(books);
             
   Console.log the object.
 */
-
+var kicks = {};
+kicks.brand = "puma";
+kicks.color = "red";
+kicks.size = 8;
+kicks.buy = "Hell Yeah!";
+console.log(kicks);
 
 /* 
 
@@ -62,7 +73,11 @@ console.log(books);
             - add a property named `size` and set it to a number value between `0` and `20`.
             - add a property named `contents` and set it to be an empty array.
 */
-
+var plainBox = {};
+plainBox.color = "fuchsia";
+plainBox.size = 3;
+plainBox.contents = [];
+console.log(plainBox);
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -72,7 +87,9 @@ console.log(books);
             - add a key named `driver` and set it to be `null`.
             - add a key named `passengers` and set it to be an empty array.
 */
+var stockCar = { model: "Ford", year: 2001, automaticTransmission: false, driver: null, passengers: [] };
 
+console.log(stockCar);
 
 /*
 
