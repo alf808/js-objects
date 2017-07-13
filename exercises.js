@@ -21,6 +21,7 @@ var books = {
   pages: 200
 };
 console.log(books);
+console.log();
   
 /*
 2.  Declare a variable named `dog` and create the following properties (key-value pairs) to the object:
@@ -44,6 +45,7 @@ var dog = {
   speak: function () { return "woof!"; }
 };
 console.log("My dog " + dog.name + " is " + dog.age + " year old who likes to " + dog.speak());
+console.log();
 
 //An empty object
 
@@ -64,6 +66,7 @@ kicks.color = "red";
 kicks.size = 8;
 kicks.buy = "Hell Yeah!";
 console.log(kicks);
+console.log();
 
 /* 
 
@@ -78,6 +81,7 @@ plainBox.color = "fuchsia";
 plainBox.size = 3;
 plainBox.contents = [];
 console.log(plainBox);
+console.log();
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -90,6 +94,7 @@ console.log(plainBox);
 var stockCar = { model: "Ford", year: 2001, automaticTransmission: false, driver: null, passengers: [] };
 
 console.log(stockCar);
+console.log();
 
 /*
 
@@ -118,6 +123,7 @@ var completePerson = buildPerson(plainPerson, "alf", 53);
 console.log(completePerson);
 console.log(completePerson.name);
 console.log(completePerson.age);
+console.log();
 
 /*
 7. Display values of objects that are inside an array
@@ -209,7 +215,7 @@ function printOrders(orders) {
 }
 
 console.log(printOrders(arrayOfObjects));
-
+console.log();
 /*
 8. Addition with an object
    Declare a new variable named sumObj and set it to be a new object with the properties `a`, `b`, and `result`. 
@@ -222,7 +228,20 @@ console.log(printOrders(arrayOfObjects));
         Invoke your function and pass in your object, store the result to a variable named sumObjResult and use `console.log` 
         to inspect your results.
 */
+var sumObj = {
+  a: 2,
+  b: 1,
+  result: undefined
+};
 
+function objectAddition(obj) {
+  obj.result = obj.a + obj.b;
+  return obj;
+}
+
+var sumObjResult = objectAddition(sumObj);
+console.log("objectAddition result: " + sumObjResult.result);
+console.log();
 
 /*
 9. Print sum function and add as new key-value
@@ -241,6 +260,14 @@ console.log(printOrders(arrayOfObjects));
         **create more** objects and invoke your function multiple times.
  */
 
+function printObj(obj) {
+  obj.output = obj.a + " + " + obj.b + " = " + obj.result;
+  return objectAddition(obj);
+}
+
+var printObjResult = printObj(sumObj);
+console.log(printObjResult.output);
+console.log();
 
 /*
 10. Putting stuff in `plainBox`
@@ -252,6 +279,8 @@ console.log(printOrders(arrayOfObjects));
         plainBoxResult and use `console.log` to inspect your results.
  */
 
+
+console.log();
 
 /*
 11. Detecting transmission
@@ -265,6 +294,8 @@ console.log(printOrders(arrayOfObjects));
  */
 
 
+console.log();
+
 /*
 12.  Who's driving this thing?!
      As you may have noticed that the `stockCar` doesn't have a driver!
@@ -277,6 +308,8 @@ console.log(printOrders(arrayOfObjects));
       your results. Consider using `plainPerson` as your driver.
  */
 
+
+console.log();
 
 /*
     #Final Boss
