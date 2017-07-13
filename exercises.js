@@ -20,7 +20,7 @@ var books = {
   categoery: "Self Help",
   pages: 200
 };
-console.log(books);
+console.log("books: ", books);
 console.log();
   
 /*
@@ -65,7 +65,7 @@ kicks.brand = "puma";
 kicks.color = "red";
 kicks.size = 8;
 kicks.buy = "Hell Yeah!";
-console.log(kicks);
+console.log("kicks: ", kicks);
 console.log();
 
 /* 
@@ -80,7 +80,7 @@ var plainBox = {};
 plainBox.color = "fuchsia";
 plainBox.size = 3;
 plainBox.contents = [];
-console.log(plainBox);
+console.log("plainbox: ", plainBox);
 console.log();
 
 /*
@@ -93,7 +93,7 @@ console.log();
 */
 var stockCar = { model: "Ford", year: 2001, automaticTransmission: false, driver: null, passengers: [] };
 
-console.log(stockCar);
+console.log("stockcar: ", stockCar);
 console.log();
 
 /*
@@ -120,9 +120,9 @@ function buildPerson (person, nameString, age) {
     return person;
 }
 var completePerson = buildPerson(plainPerson, "alf", 53);
-console.log(completePerson);
-console.log(completePerson.name);
-console.log(completePerson.age);
+console.log("complete person: ", completePerson);
+console.log("name: ", completePerson.name);
+console.log("age: ", completePerson.age);
 console.log();
 
 /*
@@ -240,7 +240,7 @@ function objectAddition(obj) {
 }
 
 var sumObjResult = objectAddition(sumObj);
-console.log("objectAddition result: " + sumObjResult.result);
+console.log("objectAddition result: ", sumObjResult.result);
 console.log();
 
 /*
@@ -266,7 +266,7 @@ function printObj(obj) {
 }
 
 var printObjResult = printObj(sumObj);
-console.log(printObjResult.output);
+console.log("nice printed out object ", printObjResult.output);
 console.log();
 
 /*
@@ -279,7 +279,15 @@ console.log();
         plainBoxResult and use `console.log` to inspect your results.
  */
 
+function putInPlainBox(obj) {
+  for (var i = 1; i <=10; i++) {
+    obj.contents.push(Math.floor((Math.random() * 100) + 1)); // from w3schools
+  }
+  return obj;
+}
 
+var plainBoxResult = putInPlainBox(plainBox);
+console.log("plainBoxResult of random contents: ", plainBoxResult.contents);
 console.log();
 
 /*
@@ -292,8 +300,19 @@ console.log();
 
     Invoke your function and pass in your stockCar object, store the result to a variable named isAutomaticTransmission and use `console.log` to inspect your results.
  */
+// var stockCar = { model: "Ford", year: 2001, automaticTransmission: false, driver: null, passengers: [] };
+function detectingTransmission(obj) {
+  obj.message = "";
+  if (obj.automaticTransmission === true) {
+    obj.message = "It absolutely has automatic transmission.";
+  } else {
+    obj.message = "It is not automatic but it runs.";
+  }
+  return obj;
+}
 
-
+var isAutomaticTransmission = detectingTransmission(stockCar);
+console.log("transmission: ", isAutomaticTransmission.message);
 console.log();
 
 /*
@@ -308,7 +327,13 @@ console.log();
       your results. Consider using `plainPerson` as your driver.
  */
 
+function addDriver(car, person) {
+  car.driver = person;
+  return car;
+}
 
+var stockCarWithDriver = addDriver(stockCar, plainPerson);
+console.log("driver: ", stockCarWithDriver.driver);
 console.log();
 
 /*
